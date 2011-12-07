@@ -107,7 +107,6 @@ function add_content($content = '') {
 	}
 	$content .= '<!-- Beginn von `social share privacy by smeagol.de´ -->';
 	if(!k2bssp_myausschluss($setting_options)) {
-		global $post;
 		$Default_options = k2bssp_doreplaceoptions($Default_options);
 		$content .= '<div id="socialshareprivacy"></div>';
 		$content .= "
