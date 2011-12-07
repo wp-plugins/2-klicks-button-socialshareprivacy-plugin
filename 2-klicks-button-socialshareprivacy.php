@@ -2,11 +2,11 @@
 /*
 Plugin Name: 2-Klicks-Button - Socialshareprivacy Plugin
 Plugin URI: http://wordpress.org/extend/plugins/2-klicks-button-socialshareprivacy-plugin/
-Version: 1.3.2
-Description: Das 2-Klicks-Buttons Socialshareprivacy-Plugin von heise.de für Wordpress. Bearbeitet von Smeagol. Grundlage ist nun eine neue.
+Version: 1.3.3
+Description: Das 2-Klicks-Buttons Socialshareprivacy-Plugin von heise.de für Wordpress. Bearbeitet von Smeagol. Grundlage ist das heise.de Plugin Version 1.3
 Author: Smeagol45
 Author URI: http://sgr.cc/?p=1251
-License: GPL2
+License: GPL v2
 */
 
 require_once 'includes/k2bssp_admin.php';

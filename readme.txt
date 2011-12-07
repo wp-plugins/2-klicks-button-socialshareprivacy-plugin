@@ -4,7 +4,7 @@ Donate link: http://sgr.cc/?p=11
 Tags: bookmark, bookmarking, bookmarks, button, Facebook, google, google buzz, icon, icons, links, sharing, social, social bookmarking, social bookmarks, twitter, google plus, google +1, +1, privacy, datenschutz
 Requires at least: 2.0.0
 Tested up to: 3.3RC1
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 
 Wordpress-Plugin Umsetzung des 2-Klick-Button Scripts von heise.de
 Datenschutzfreundliche Social-Media-Einbindung von Facebook, Twitter und Google+.
@@ -31,6 +31,7 @@ Also es gibt jetzt keinerlei Einschränkungen mehr. Diese Version wurde bereits 
 Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf smeagol.de")
 
 = Mein Plugin wird nicht angezeigt =
+* Bis Version 1.3.2 enthält das Plugin noch verschiedene Fehler. Update sehr empfehlenswert.
 * Bitte Updaten. Version 1.2.0 enthält noch den Fehler das es nur angezeigt wird wenn die Wordpressinstallation sich im Hauptverzeichnis befindet.
 
 == Screenshots ==
@@ -42,14 +43,15 @@ Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf s
 
 == Installation ==
 
-1. Das gesamte Verzeichnis 'socialshareprivacy' aus der Zip-Datei entpaken und ins '/wp-content/plugins' Verzeichnis hochladen.
-2. '2-Klicks-Buttons by Smeagol' auf der Administrator Oberfläche unter Plugins im Wordpress aktivieren.
-3. Alle Einstellungen können in der Wordpress Administration unter Einstellungen - 2-Klick-Buttons getroffen werden. (Siehe Screenshots)
+1. Das gesamte Verzeichnis '2-klicks-button-socialshareprivacy-plugin' aus der Zip-Datei entpaken und ins '/wp-content/plugins/' Verzeichnis hochladen.
+2. '2-Klicks-Button - Socialshareprivacy Plugin' auf der Administrator Oberfläche unter Plugins im Wordpress aktivieren.
+3. Alle Einstellungen können in der Wordpress Administration unter Einstellungen - 2 Klicks Buttons angepasst werden.
 
 == Changelog ==
 
-= 1.3.2 =
-* Fehler der doppelt .php behoben.
+= 1.3.3 =
+* Fehler der doppelt .php behoben
+* Debug Ausgaben entfernt
 
 = 1.3.1 =
 * Wichtiger Bug Fix!
@@ -82,4 +84,4 @@ Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf s
 * Definitiv Updaten.
 
 = 1.2.0 =
-More nice functions only
+* More nice functions only
