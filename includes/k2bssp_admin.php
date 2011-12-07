@@ -2,7 +2,7 @@
 /*
  * @author Smeagol45
  * @homepage http://sgr.cc/?p=1251
- * @version 1.0.0
+ * @version 1.0.2
  * @license: G.P.L. 2.0
  * @pluginname: 2-Klicks-Button - Socialshareprivacy Plugin
  */

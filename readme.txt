@@ -4,7 +4,7 @@ Donate link: http://sgr.cc/?p=11
 Tags: bookmark, bookmarking, bookmarks, button, Facebook, google, google buzz, icon, icons, links, sharing, social, social bookmarking, social bookmarks, twitter, google plus, google +1, +1, privacy, datenschutz
 Requires at least: 2.0.0
 Tested up to: 3.3RC1
-Stable tag: 1.3.4
+Stable tag: 1.3.5
 
 Wordpress-Plugin Umsetzung des 2-Klick-Button Scripts von heise.de
 Datenschutzfreundliche Social-Media-Einbindung von Facebook, Twitter und Google+.
@@ -48,6 +48,10 @@ Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf s
 3. Alle Einstellungen können in der Wordpress Administration unter Einstellungen - 2 Klicks Buttons angepasst werden.
 
 == Changelog ==
+
+= 1.3.5 =
+* Anpassung für Twitter Text
+* %content% funktioniert jetzt auch reibungsloser.
 
 = 1.3.4 =
 * Textanpassungen in der Adminoberfläche
