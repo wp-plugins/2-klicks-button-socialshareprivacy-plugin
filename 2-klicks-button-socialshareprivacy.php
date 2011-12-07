@@ -74,9 +74,9 @@ function k2bssp_doreplaceoptions($Options) {
 	$Options['services']['twitter']['tweet_text'] = str_replace(array(	'%title%',
 																		'%content%',
 																		'%author%'
-															),	array(	$post->post_title,
-																		$post->post_content,
-																		get_the_author_meta('display_name', $post->post_author)
+															),	array(	urlencode(htmlentities($post->post_title)),
+																		urlencode(htmlentities($post->post_content)),
+																		urlencode(htmlentities(get_the_author_meta('display_name', $post->post_author)))
 															), $Options['services']['twitter']['tweet_text']);
 	return $Options;
 }
