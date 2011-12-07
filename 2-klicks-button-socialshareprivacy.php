@@ -60,10 +60,11 @@ function k2bssp_myausschluss($setting_options) {
 	global $post;
 	$k2bssp_ausschlussarray = explode(';', $setting_options['ausschluss_cats']);
 	if(in_category($k2bssp_ausschlussarray, $post)) return true;
+	
 	$k2bssp_ausschlussarray = explode(';', $setting_options['ausschluss_site']);
 	foreach($k2bssp_ausschlussarray as $testpostid) {
-		if($testpostid==$post->ID) { echo 'FUCK TRUE alter!';
-			return true; }
+		if($testpostid==$post->ID)
+			return true;
 	}
 	return false;
 }
