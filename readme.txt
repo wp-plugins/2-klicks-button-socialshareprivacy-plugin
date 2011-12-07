@@ -1,77 +1,82 @@
-=== WP socialshareprivacy ===
-Contributors: boxi
-Donate link: 
-Tags: social bookmarks, facebook, twitter, googleplus, button, 2click, 2klick, privacy, datenschutz
-Requires at least: 3.0.1
-Tested up to: 3.2.1
-Stable tag: 0.5.1
+=== 2-Klicks-Button - Socialshareprivacy Plugin ===
+Contributors: Smeagol45
+Donate link: http://sgr.cc/?p=11
+Tags: bookmark, bookmarking, bookmarks, button, Facebook, google, google buzz, icon, icons, links, sharing, social, social bookmarking, social bookmarks, twitter, google plus, google +1, +1, privacy, datenschutz
+Requires at least: 2.0.0
+Tested up to: 3.3RC1
+Stable tag: 1.3.1
 
-Datenschutzfreundliche Social-Media-Einbindung (Facebook, Twitter und Google+)
+Wordpress-Plugin Umsetzung des 2-Klick-Button Scripts von heise.de
+Datenschutzfreundliche Social-Media-Einbindung von Facebook, Twitter und Google+.
 
 == Description ==
 
-Fügt Facebook-, Twitter- und Google+-Buttons hinzu, mit denen man Artikel komfortabel seinen Freunden empfehlen kann.
-Dabei werden keine Daten der Leser ohne deren Zustimmung an die Betreiber der Netzwerk-Plattformen gesendet.
+Ein WordPress-Plugin. Die Umsetzung des 2-Klick-Button Scripts von heise.de.
+
+Das Plugin bietet die Möglichkeit den Facebook-Like, twitter- und Google Plus Button erst durch ein Klick des Besuchers auf die Seite einzubinden um den neuen Datenschutzbestimmungen in Deutschland höchstwahrscheinlich gerecht zu werden.
+
+Dieses Plugin wurde um die Funktionalität erweitert das die 2-Klick-Buttons auch auf WordPress Seiten angezeigt werden. Außerdem wurde ein Ausschluss verfahren von Seiten und ähnlichem hinzugefügt.
+
+Weitere Informationen: [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf smeagol.de")
 
 Wie das ganze funktioniert, beschreibt der Artikel [2 Klicks für mehr Datenschutz](http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html "heise online")
-auf heise online. Dieses Plugin verwendet das [heise socialshareprivacy](http://www.heise.de/extras/socialshareprivacy/ "jQuery Plug-In socialshareprivacy")-jQuery-Plugin,
-um diese Funktion in Wordpress bereitzustellen.
+auf heise online. Dieses Plugin verwendet das [heise socialshareprivacy](http://www.heise.de/extras/socialshareprivacy/ "jQuery Plug-In socialshareprivacy")-jQuery-Plugin, um diese Funktion in Wordpress bereitzustellen.
 
-**Hinweis:** Zum jetzigen Zeitpunkt können die Buttons nur genau einmal gleichzeitig auf der Seite eingebaut werden. 
-Dies ist eine Einschränkung des Heise-Skriptes, auf dem dieses Plugin basiert. Sobald diese Einschränkung entfernt wurde,
-wird die Funktionalität auch in diesem WP-Plugin nachgerüstet. Social-Buttons werden also erst einmal nur in Artikel-Seiten
-eingebaut.
+Also es gibt jetzt keinerlei Einschränkungen mehr. Diese Version wurde bereits in Wordpress 3.3 RC 1 getestet. Außerdem ist die aktuelle Version 1.3 des Plugins von heise.de in 'min' from enthalten.
 
 == Frequently Asked Questions ==
 
-Noch keine.
+= Any Question(s)? / Fragen? =
+
+Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf smeagol.de")
+
+= Mein Plugin wird nicht angezeigt =
+* Bitte Updaten. Version 1.2.0 enthält noch den Fehler das es nur angezeigt wird wenn die Wordpressinstallation sich im Hauptverzeichnis befindet.
 
 == Screenshots ==
 
 1. Deaktivierte Buttons
 2. Aktivierte Buttons
-3. Info-Texte
-4. 2-Klick-Logo (heise online)
+3. Info Texte
+4. 2 Klick Logo von heise.de
 
 == Installation ==
 
-1. `wp-socialshareprivacy.php` in das `/wp-content/plugins/`-Verzeichnis hochladen.
-1. Plugin unter 'Plugins' aktivieren.
+1. Das gesamte Verzeichnis 'socialshareprivacy' aus der Zip-Datei entpaken und ins '/wp-content/plugins' Verzeichnis hochladen.
+2. '2-Klicks-Buttons by Smeagol' auf der Administrator Oberfläche unter Plugins im Wordpress aktivieren.
+3. Alle Einstellungen können in der Wordpress Administration unter Einstellungen - 2-Klick-Buttons getroffen werden. (Siehe Screenshots)
 
 == Changelog ==
 
-= 0.5 =
-* Backend improvements
+= 1.3.1 =
+* Wichtiger Bug Fix!
+* Version 1.3.0 nicht empfehlenswert.
 
-= 0.4.3 =
-* Removed closures (and PHP 5.3 dependency)
+= 1.3.0 =
+* Neue Plugin Basis
+* Neue Administrationsoberfläche
+* Neuste Version des Heise Plugins v. 1.3
+* Erfolgreich getestet unter Wordpress 3.3 RC 1
 
-= 0.4.2 =
-* Added notice: this plugin requires PHP 5.3 (closures)
+= 1.2.0 =
+* Neue Seiten ausschluss funktion über die Adminoberfläche
+* Neue Kategorie ausschluss funktion über die Adminoberfläche
+* Anzeige der Buttons auch auf statischen Wordpress Seiten.
+* Code Optimierung der Adminoberfläche
+* Bug fixes auf der Adminoberfläche
 
-= 0.4.1 =
-* Backend improvements
-* Backend bug fixes
+= 1.1.0 =
+* Bug fixes only
+* Update des 2-Klick-Button Codes von heise.de
 
-= 0.4 =
-* complete options in the admin interface
-
-= 0.3.1 =
-* new socialshareprivacy core version (http://www.heise.de/extras/socialshareprivacy/)
-
-= 0.3 =
-* new socialshareprivacy core version
-* Fixed PHP warning
-
-= 0.2.1 =
-* Trivial changes
-
-= 0.2 =
-* Bugfixes
-
-= 0.1 =
-* Init
+= 1.0.0 =
+* Neue Adminoberfläche
+* Neue optionale vertikale Button-Anordnung
 
 == Upgrade Notice ==
 
-Keine
+= 1.3.1 =
+* Definitiv Updaten.
+
+= 1.2.0 =
+More nice functions only
