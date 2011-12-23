@@ -2,7 +2,7 @@
 /*
 Plugin Name: 2-Klicks-Button - Socialshareprivacy Plugin
 Plugin URI: http://wordpress.org/extend/plugins/2-klicks-button-socialshareprivacy-plugin/
-Version: 1.3.5
+Version: 1.3.7
 Description: Das 2-Klicks-Buttons Socialshareprivacy-Plugin von heise.de für Wordpress. Bearbeitet von Smeagol. Grundlage ist das heise.de Plugin Version 1.3
 Author: Smeagol45
 Author URI: http://sgr.cc/?p=1251
@@ -21,6 +21,7 @@ $Default_options = array(
 	cookie_expire  => 365,
 	cookie_domain  => '',
 	css_path       => BASE_URL . 'socialshareprivacy.css',
+	oben		   => 'nein',
 	services       => array(
 		facebook => array(
 			status          => 'on',
@@ -83,10 +84,11 @@ function k2bssp_doreplaceoptions($Options) {
 
 function add_content($content = '') {
 	global $Default_options;
-	
+
 	if ( !is_singular() ) {
 		return $content;
 	}
+	$myContent = '';
 	$setting_options = get_option('k2bssp_options');
 	if ( $setting_options ) {
 		foreach ( array_keys($Default_options[services]) as $service ) {
@@ -105,11 +107,11 @@ function add_content($content = '') {
 			} 
 		}
 	}
-	$content .= '<!-- Beginn von `social share privacy by smeagol.de´ -->';
+	$myContent .= '<!-- Beginn von `social share privacy by smeagol.de´ -->';
 	if(!k2bssp_myausschluss($setting_options)) {
 		$Default_options = k2bssp_doreplaceoptions($Default_options);
-		$content .= '<div id="socialshareprivacy"></div>';
-		$content .= "
+		$myContent .= '<div id="socialshareprivacy"></div>';
+		$myContent .= "
 			<script type=\"text/javascript\">
 			(function(\$){
 				var options = " . json_encode($Default_options) . ";
@@ -121,7 +123,13 @@ function add_content($content = '') {
 			</script>
 		";
 	}
-	$content .= '<!-- Ende von `social share privacy by smeagol.de´ -->';
+	$myContent .= '<!-- Ende von `social share privacy by smeagol.de´ -->';
+	
+	if(strtolower(substr($setting_options['oben'], 0, 1))!='j')
+		$content .= $myContent;
+	else
+		$content = $myContent . $content;
+
 	return $content;
 }
 

@@ -2,7 +2,7 @@
 /*
  * @author Smeagol45
  * @homepage http://sgr.cc/?p=1251
- * @version 1.0.2
+ * @version 1.0.5
  * @license: G.P.L. 2.0
  * @pluginname: 2-Klicks-Button - Socialshareprivacy Plugin
  */
@@ -80,6 +80,7 @@ class k2bsspSection {
 		new InputField( 'cookie_domain', 'Cookie-Domain', 'k2bssp_g', 'Domain, für die das Cookie gültig ist. Standard (nicht ausgefüllt): aktuelle Domain', 'code' );
 		new InputField( 'cookie_path', 'Cookie-Path', 'k2bssp_g', 'Pfad der Gültigkeit des Cookies', 'code' );
 		new InputField( 'cookie_expire', 'Cookie-Expire-Time', 'k2bssp_g', 'Dauer, die das Cookie gültig ist, in Tagen', 'code' );
+		new InputField( 'oben', 'Buttons oberhalb des Artikels anzeigen', 'k2bssp_g', 'Ja/Nein - Die "Share Buttons" werden wenn "Ja" oberhalb der Artikel angezeigt. Ansonsten werden sie weiterhin unterhalb der Artikel angezeigt.', 'code');
 		new InputField( 'ausschluss_cats', 'Kategorien ausschließen', 'k2bssp_g', 'Hier können sie ";"-getrennt verschiedene Kategorien ausschließen. ', 'code' );
 		new InputField( 'ausschluss_site', 'Seiten ausschließen', 'k2bssp_g', 'Hier können sie ";"-getrennt verschiedene Ids von Seiten ausschließen. ', 'code' );
 		new InputField( 'services_facebook_status', '<b>Facebook Button anzeigen</b>', 'k2bssp_fb', 'Ja/Nein', '', 'checkbox');

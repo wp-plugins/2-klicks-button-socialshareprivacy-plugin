@@ -3,11 +3,11 @@ Contributors: Smeagol45
 Donate link: http://sgr.cc/?p=11
 Tags: bookmark, bookmarking, bookmarks, button, Facebook, google, google buzz, icon, icons, links, sharing, social, social bookmarking, social bookmarks, twitter, google plus, google +1, +1, privacy, datenschutz
 Requires at least: 2.0.0
-Tested up to: 3.3RC1
-Stable tag: 1.3.5
+Tested up to: 3.3
+Stable tag: 1.3.7
 
 Wordpress-Plugin Umsetzung des 2-Klick-Button Scripts von heise.de
-Datenschutzfreundliche Social-Media-Einbindung von Facebook, Twitter und Google+.
+Datenschutz freundliche Social-Media-Einbindung von Facebook, Twitter und Google+.
 
 == Description ==
 
@@ -22,7 +22,7 @@ Weitere Informationen: [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf sm
 Wie das ganze funktioniert, beschreibt der Artikel [2 Klicks für mehr Datenschutz](http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html "heise online")
 auf heise online. Dieses Plugin verwendet das [heise socialshareprivacy](http://www.heise.de/extras/socialshareprivacy/ "jQuery Plug-In socialshareprivacy")-jQuery-Plugin, um diese Funktion in Wordpress bereitzustellen.
 
-Also es gibt jetzt keinerlei Einschränkungen mehr. Diese Version wurde bereits in Wordpress 3.3 RC 1 getestet. Außerdem ist die aktuelle Version 1.3 des Plugins von heise.de in 'min' from enthalten.
+Also es gibt jetzt keinerlei Einschränkungen mehr. Diese Version wurde bereits in Wordpress 3.3 getestet. Außerdem ist die aktuelle Version 1.3 des Plugins von heise.de in 'min' Form enthalten.
 
 == Frequently Asked Questions ==
 
@@ -38,23 +38,27 @@ Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf s
 
 1. Deaktivierte Buttons
 2. Aktivierte Buttons
-3. Info Texte
+3. Ausschnitt der vielen Einstellmöglichkeiten
 4. 2 Klick Logo von heise.de
 
 == Installation ==
 
-1. Das gesamte Verzeichnis '2-klicks-button-socialshareprivacy-plugin' aus der Zip-Datei entpaken und ins '/wp-content/plugins/' Verzeichnis hochladen.
+1. Das gesamte Verzeichnis '2-klicks-button-socialshareprivacy-plugin' aus der Zip-Datei entpacken und ins '/wp-content/plugins/' Verzeichnis hochladen.
 2. '2-Klicks-Button - Socialshareprivacy Plugin' auf der Administrator Oberfläche unter Plugins im Wordpress aktivieren.
 3. Alle Einstellungen können in der Wordpress Administration unter Einstellungen - 2 Klicks Buttons angepasst werden.
 
 == Changelog ==
+
+= 1.3.7 =
+* Erweiterung um die Option "oben"
+* Jetzt können die Buttons auch oberhalb der Artikel angezeigt werden.
 
 = 1.3.5 =
 * Anpassung für Twitter Text
 * %content% funktioniert jetzt auch reibungsloser.
 
 = 1.3.4 =
-* Textanpassungen in der Adminoberfläche
+* Textanpassungen in der Administrationsoberfläche
 * Der Twitter Text kann nun dynamisch angepasst werden
 
 = 1.3.3 =
@@ -72,21 +76,24 @@ Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf s
 * Erfolgreich getestet unter Wordpress 3.3 RC 1
 
 = 1.2.0 =
-* Neue Seiten ausschluss funktion über die Adminoberfläche
-* Neue Kategorie ausschluss funktion über die Adminoberfläche
+* Neue Seiten Ausschlussfunktion über die Administrationsoberfläche
+* Neue Kategorie Ausschlussfunktion über die Administrationsoberfläche
 * Anzeige der Buttons auch auf statischen Wordpress Seiten.
-* Code Optimierung der Adminoberfläche
-* Bug fixes auf der Adminoberfläche
+* Code Optimierung der Administrationsoberfläche
+* Bug fixes auf der Administrationsoberfläche
 
 = 1.1.0 =
 * Bug fixes only
 * Update des 2-Klick-Button Codes von heise.de
 
 = 1.0.0 =
-* Neue Adminoberfläche
+* Neue Administrationsoberfläche
 * Neue optionale vertikale Button-Anordnung
 
 == Upgrade Notice ==
+
+= 1.3.7 =
+* Jetzt können die Buttons auch oberhalb der Artikel angezeigt werden.
 
 = 1.3.1 =
 * Definitiv Updaten.
