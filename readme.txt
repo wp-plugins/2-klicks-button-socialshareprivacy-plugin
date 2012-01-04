@@ -1,10 +1,10 @@
 ﻿=== 2-Klicks-Button - Socialshareprivacy Plugin ===
 Contributors: Smeagol45
-Donate link: http://sgr.cc/?p=11
+Donate link: http://sgr.cc/?p=1251#1
 Tags: bookmark, bookmarking, bookmarks, button, Facebook, google, google buzz, icon, icons, links, sharing, social, social bookmarking, social bookmarks, twitter, google plus, google +1, +1, privacy, datenschutz
 Requires at least: 2.0.0
-Tested up to: 3.3
-Stable tag: 1.3.7
+Tested up to: 3.3.1
+Stable tag: 1.4.0
 
 Wordpress-Plugin Umsetzung des 2-Klick-Button Scripts von heise.de
 Datenschutz freundliche Social-Media-Einbindung von Facebook, Twitter und Google+.
@@ -15,7 +15,7 @@ Ein WordPress-Plugin. Die Umsetzung des 2-Klick-Button Scripts von heise.de.
 
 Das Plugin bietet die Möglichkeit den Facebook-Like, twitter- und Google Plus Button erst durch ein Klick des Besuchers auf die Seite einzubinden um den neuen Datenschutzbestimmungen in Deutschland höchstwahrscheinlich gerecht zu werden.
 
-Dieses Plugin wurde um die Funktionalität erweitert das die 2-Klick-Buttons auch auf WordPress Seiten angezeigt werden. Außerdem wurde ein Ausschluss verfahren von Seiten und ähnlichem hinzugefügt.
+Dieses Plugin wurde um die Funktionalität erweitert das die 2-Klick-Buttons auch auf WordPress Seiten angezeigt werden. Außerdem wurde ein Ausschluss System von Seiten, Artikeln und Kategorien hinzugefügt.
 
 Weitere Informationen: [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf smeagol.de")
 
@@ -24,11 +24,16 @@ auf heise online. Dieses Plugin verwendet das [heise socialshareprivacy](http://
 
 Also es gibt jetzt keinerlei Einschränkungen mehr. Diese Version wurde bereits in Wordpress 3.3 getestet. Außerdem ist die aktuelle Version 1.3 des Plugins von heise.de in 'min' Form enthalten.
 
+Weiterhin ist hinzugekommen das das Plugin nun auch Mehrfach auf einer Seite verwendet werden kann. Somit kann dieses Plugin auch auf deiner Startseite angezeigt werden, wenn du das möchtest.
+
 == Frequently Asked Questions ==
 
 = Any Question(s)? / Fragen? =
 
 Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf smeagol.de")
+
+= Kann ich das Plugin auf der Startseite nutzen? =
+* Ja, ab Version 1.4.0 ist dies möglich
 
 = Mein Plugin wird nicht angezeigt =
 * Bis Version 1.3.2 enthält das Plugin noch verschiedene Fehler. Update sehr empfehlenswert.
@@ -48,6 +53,12 @@ Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf s
 3. Alle Einstellungen können in der Wordpress Administration unter Einstellungen - 2 Klicks Buttons angepasst werden.
 
 == Changelog ==
+
+= 1.4.0 =
+* Share Buttons können nun auch auf der Startseite (Artikelübersicht, Loop) angezeigt und genutzt werden
+
+= 1.3.9 =
+* Share Buttons können nun wahlweise auf Privaten Seiten/Artikeln nicht angezeigt werden
 
 = 1.3.7 =
 * Erweiterung um die Option "oben"
@@ -91,6 +102,9 @@ Schreib einen Kommentar [smeagol.de](http://sgr.cc/?p=1251 "2 Klick Button auf s
 * Neue optionale vertikale Button-Anordnung
 
 == Upgrade Notice ==
+
+= 1.4.0 =
+* Share Buttons können nun auch auf der Startseite (Artikelübersicht, Loop) angezeigt und genutzt werden.
 
 = 1.3.7 =
 * Jetzt können die Buttons auch oberhalb der Artikel angezeigt werden.

@@ -2,7 +2,7 @@
 /*
 Plugin Name: 2-Klicks-Button - Socialshareprivacy Plugin
 Plugin URI: http://wordpress.org/extend/plugins/2-klicks-button-socialshareprivacy-plugin/
-Version: 1.3.7
+Version: 1.4.0
 Description: Das 2-Klicks-Buttons Socialshareprivacy-Plugin von heise.de für Wordpress. Bearbeitet von Smeagol. Grundlage ist das heise.de Plugin Version 1.3
 Author: Smeagol45
 Author URI: http://sgr.cc/?p=1251
@@ -10,11 +10,12 @@ License: GPL v2
 */
 
 require_once 'includes/k2bssp_admin.php';
-
 define(K2BSSP_PREFIX, 'k2bssp');
 define(BASE_URL, plugins_url('/2-klicks-button-socialshareprivacy-plugin/'));
+$K2BSSP_NUMBER = 1;
+
 $Default_options = array(
-	info_link      => 'http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html',
+	info_link      => 'http://heise.de/-1333879',
 	txt_help       => 'Wenn Sie diese Felder durch einen Klick aktivieren, werden Informationen an Facebook, Twitter oder Google in die USA &uuml;bertragen und unter Umst&auml;nden auch dort gespeichert. N&auml;heres erfahren Sie durch einen Klick auf das <em>i</em>.',
 	settings_perma => 'Dauerhaft aktivieren und Daten&uuml;ber&shy;tragung zustimmen:',
 	cookie_path    => '/',
@@ -22,6 +23,8 @@ $Default_options = array(
 	cookie_domain  => '',
 	css_path       => BASE_URL . 'socialshareprivacy.css',
 	oben		   => 'nein',
+	overall		   => 'nein',
+	ausschluss_private => 'nein',
 	services       => array(
 		facebook => array(
 			status          => 'on',
@@ -42,7 +45,7 @@ $Default_options = array(
 			txt_twitter_on  => 'mit Twitter verbunden',
 			display_name    => 'Twitter',
 			referrer_track  => '',
-			tweet_text      => ''
+			tweet_text      => '%title% '
 		),
 		gplus    => array(
 			status          => 'on',
@@ -59,15 +62,20 @@ $Default_options = array(
 
 function k2bssp_myausschluss($setting_options) {
 	global $post;
+	
+	if($post->post_status=='private')
+		if(!(strtolower(substr($setting_options['ausschluss_private'], 0, 1))!='j'))
+			return true; // ja. Private ausschließen.
+
 	$k2bssp_ausschlussarray = explode(';', $setting_options['ausschluss_cats']);
-	if(in_category($k2bssp_ausschlussarray, $post)) return true;
+	if(in_category($k2bssp_ausschlussarray, $post)) return true; // Ist in Ausschluss Kathegorie
 	
 	$k2bssp_ausschlussarray = explode(';', $setting_options['ausschluss_site']);
 	foreach($k2bssp_ausschlussarray as $testpostid) {
 		if($testpostid==$post->ID)
-			return true;
+			return true;	// Ist ausgeschlossene Id
 	}
-	return false;
+	return false; // anzeigen.
 }
 
 function k2bssp_doreplaceoptions($Options) {
@@ -84,12 +92,18 @@ function k2bssp_doreplaceoptions($Options) {
 
 function add_content($content = '') {
 	global $Default_options;
-
-	if ( !is_singular() ) {
-		return $content;
-	}
+	global $K2BSSP_NUMBER;
+	global $post;
+	
 	$myContent = '';
 	$setting_options = get_option('k2bssp_options');
+	
+	if ( !is_singular() ) {
+		if(strtolower(substr($setting_options['overall'], 0, 1))!='j')
+			return $content;
+		else
+			$setting_options['uri']=get_permalink($post->id);
+	}
 	if ( $setting_options ) {
 		foreach ( array_keys($Default_options[services]) as $service ) {
 			if ( !isset($setting_options['services_' . $service . '_status']) ) {
@@ -110,18 +124,19 @@ function add_content($content = '') {
 	$myContent .= '<!-- Beginn von `social share privacy by smeagol.de´ -->';
 	if(!k2bssp_myausschluss($setting_options)) {
 		$Default_options = k2bssp_doreplaceoptions($Default_options);
-		$myContent .= '<div id="socialshareprivacy"></div>';
+		$myContent .= '<div id="socialshareprivacy' . $K2BSSP_NUMBER . '"></div>';
 		$myContent .= "
 			<script type=\"text/javascript\">
 			(function(\$){
 				var options = " . json_encode($Default_options) . ";
 				options.cookie_domain = document.location.host;
 				$(document).ready(function(){
-					\$('#socialshareprivacy').socialSharePrivacy(options);
+					\$('#socialshareprivacy" . $K2BSSP_NUMBER . "').socialSharePrivacy(options);
 				});
 			})(jQuery);
 			</script>
 		";
+		$K2BSSP_NUMBER++;
 	}
 	$myContent .= '<!-- Ende von `social share privacy by smeagol.de´ -->';
 	

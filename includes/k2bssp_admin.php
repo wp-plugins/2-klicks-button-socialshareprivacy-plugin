@@ -2,7 +2,7 @@
 /*
  * @author Smeagol45
  * @homepage http://sgr.cc/?p=1251
- * @version 1.0.5
+ * @version 1.1.0
  * @license: G.P.L. 2.0
  * @pluginname: 2-Klicks-Button - Socialshareprivacy Plugin
  */
@@ -39,11 +39,11 @@ class k2bsspAdminPage {
 	}
 	
 	function admin_general_description() {
-		?><p><b>Wenn Optionen leergelassen werden, wird der Standardwert aus dem Heise.de Plugin  verwendet.</b></p><?php
+		?><p><b>Wenn Optionen leergelassen werden, wird der Standardwert aus dem Heise.de Plugin verwendet.</b></p><?php
 	}
 	
 	function admin_facebook_description() {
-		?><p>Einstellungen für Facebook. Ab dieser Version ist keine App-ID mehr notwendig.</p><?php
+		?><p>Einstellungen für Facebook. Es ist keine App-ID mehr notwendig.</p><?php
 	}
 	
 	function admin_twitter_description() {
@@ -81,8 +81,10 @@ class k2bsspSection {
 		new InputField( 'cookie_path', 'Cookie-Path', 'k2bssp_g', 'Pfad der Gültigkeit des Cookies', 'code' );
 		new InputField( 'cookie_expire', 'Cookie-Expire-Time', 'k2bssp_g', 'Dauer, die das Cookie gültig ist, in Tagen', 'code' );
 		new InputField( 'oben', 'Buttons oberhalb des Artikels anzeigen', 'k2bssp_g', 'Ja/Nein - Die "Share Buttons" werden wenn "Ja" oberhalb der Artikel angezeigt. Ansonsten werden sie weiterhin unterhalb der Artikel angezeigt.', 'code');
+		new InputField( 'overall', 'Buttons auch auf der Startseite anzeigen', 'k2bssp_g', 'Ja/Nein - Die "Share Buttons" werden wenn "Ja" auch auf der Startseite und nicht nur auf einzelnen Seiten/Artikeln angezeigt.', 'code');
 		new InputField( 'ausschluss_cats', 'Kategorien ausschließen', 'k2bssp_g', 'Hier können sie ";"-getrennt verschiedene Kategorien ausschließen. ', 'code' );
 		new InputField( 'ausschluss_site', 'Seiten ausschließen', 'k2bssp_g', 'Hier können sie ";"-getrennt verschiedene Ids von Seiten ausschließen. ', 'code' );
+		new InputField( 'ausschluss_private', 'Private Artikel/Seiten ausschließen', 'k2bssp_g', 'Ja/Nein - Die Share Buttons werden wenn "Ja" nicht auf Privaten Artikeln/Seiten angezeigt.', 'code' );
 		new InputField( 'services_facebook_status', '<b>Facebook Button anzeigen</b>', 'k2bssp_fb', 'Ja/Nein', '', 'checkbox');
 		new InputField( 'services_facebook_display_name', 'Anzeigename', 'k2bssp_fb', 'Schreibweise des Service in den Optionen' );
 		new InputField( 'services_facebook_txt_info', 'Info Text', 'k2bssp_fb', 'Info Text für den  Facebook Empfehlen Button' );
