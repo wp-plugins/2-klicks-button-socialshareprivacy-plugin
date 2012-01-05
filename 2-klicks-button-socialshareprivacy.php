@@ -2,7 +2,7 @@
 /*
 Plugin Name: 2-Klicks-Button - Socialshareprivacy Plugin
 Plugin URI: http://wordpress.org/extend/plugins/2-klicks-button-socialshareprivacy-plugin/
-Version: 1.4.0
+Version: 1.4.1
 Description: Das 2-Klicks-Buttons Socialshareprivacy-Plugin von heise.de für Wordpress. Bearbeitet von Smeagol. Grundlage ist das heise.de Plugin Version 1.3
 Author: Smeagol45
 Author URI: http://sgr.cc/?p=1251
@@ -12,7 +12,8 @@ License: GPL v2
 require_once 'includes/k2bssp_admin.php';
 define(K2BSSP_PREFIX, 'k2bssp');
 define(BASE_URL, plugins_url('/2-klicks-button-socialshareprivacy-plugin/'));
-$K2BSSP_NUMBER = 1;
+$K2BSSP_Number = 1;
+$K2BSSP_Options = array( 0 => '');
 
 $Default_options = array(
 	info_link      => 'http://heise.de/-1333879',
@@ -92,7 +93,8 @@ function k2bssp_doreplaceoptions($Options) {
 
 function add_content($content = '') {
 	global $Default_options;
-	global $K2BSSP_NUMBER;
+	global $K2BSSP_Number;
+	global $K2BSSP_Options;
 	global $post;
 	
 	$myContent = '';
@@ -124,19 +126,20 @@ function add_content($content = '') {
 	$myContent .= '<!-- Beginn von `social share privacy by smeagol.de´ -->';
 	if(!k2bssp_myausschluss($setting_options)) {
 		$Default_options = k2bssp_doreplaceoptions($Default_options);
-		$myContent .= '<div id="socialshareprivacy' . $K2BSSP_NUMBER . '"></div>';
-		$myContent .= "
-			<script type=\"text/javascript\">
+		$K2BSSP_Options[$K2BSSP_Number] = $Default_options;
+		$myContent .= '<div id="socialshareprivacy' . $K2BSSP_Number . '"></div>';
+		/*$myContent .= "
+			<script type=\"text/javascript\"><!--
 			(function(\$){
 				var options = " . json_encode($Default_options) . ";
 				options.cookie_domain = document.location.host;
 				$(document).ready(function(){
-					\$('#socialshareprivacy" . $K2BSSP_NUMBER . "').socialSharePrivacy(options);
+					\$('#socialshareprivacy" . $K2BSSP_Number . "').socialSharePrivacy(options);
 				});
 			})(jQuery);
-			</script>
-		";
-		$K2BSSP_NUMBER++;
+			--></script>
+		";*/
+		$K2BSSP_Number++;
 	}
 	$myContent .= '<!-- Ende von `social share privacy by smeagol.de´ -->';
 	
@@ -146,6 +149,26 @@ function add_content($content = '') {
 		$content = $myContent . $content;
 
 	return $content;
+}
+function insert_javascript() {
+	global $K2BSSP_Number;
+	global $K2BSSP_Options;
+	$myEcho = "<script type=\"text/javascript\">
+	";
+	for($i=1;$i<$K2BSSP_Number;$i++) {
+		$myEcho .= "
+			(function(\$){
+				var options = " . json_encode($K2BSSP_Options[$i]) . ";
+				options.cookie_domain = document.location.host;
+				$(document).ready(function(){
+					\$('#socialshareprivacy" . $i . "').socialSharePrivacy(options);
+				});
+			})(jQuery);
+			";
+	}
+	$myEcho .= "
+	</script>";
+	ECHO $myEcho;
 }
 
 function enqueue_styles() {
@@ -210,8 +233,9 @@ function k2bssp_settings_page() {
 function start2klicksspbutton() {
 	wp_enqueue_script("jquery");
 	add_filter('the_content', 'add_content');
-	add_action( 'wp_print_scripts', 'enqueue_scripts' );
-	add_action( 'wp_print_styles', 'enqueue_styles' );
+	add_action('wp_print_scripts', 'enqueue_scripts' );
+	add_action('wp_print_styles', 'enqueue_styles' );
+	add_action('wp_footer', 'insert_javascript');
 	// admin seiten adds.
 	if ( is_admin() ) {
 		add_action('admin_menu', 'create_admin_menu');
